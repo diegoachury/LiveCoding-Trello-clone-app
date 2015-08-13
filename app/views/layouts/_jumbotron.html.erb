@@ -1,10 +1,11 @@
 <% if logged_in? %>
-  <%= link_to "Hello and welcome #{current_user.name.capitalize}!", 
+  <%= link_to "Hi #{current_user.name.capitalize}!", 
                edit_user_path(current_user), 
-               class: 'user-button pull-right btn btn-xs btn-info' %>
+               class: 'knewave user-button pull-right btn btn-xs btn-info' %>
 <% end %>
-<div class="jumbotron">
+<div class="jumbotron knewave">
   <div class="container text-center">
-    <h1>Trello clone app</h1>
+    <h1>Trello</h1>
+    <h3>clone app</h3>
   </div>
 </div>
