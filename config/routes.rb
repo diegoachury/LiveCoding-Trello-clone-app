@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
   get '/about-us',    to: 'static_pages#about_us'
   get '/help-center', to: 'static_pages#help_center'
 
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :update, :edit, :destroy]
   resources :boards
+  resources :users, only: [:create, :edit, :update, :destroy]
 end

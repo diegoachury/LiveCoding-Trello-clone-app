@@ -1,7 +1,7 @@
 <ul class="nav nav-pills">
 <% if logged_in? %>
   <li role="presentation" >
-    <%= link_to 'Logout', logout_path %>
+    <%= link_to 'Logout', logout_path, method: :delete %>
   </li>
 <% else %>
   <li role="presentation" class="<%= cp(login_path) %>">
@@ -18,5 +18,3 @@
     <%= link_to 'About us', about_us_path %>
   </li>
 </ul>
-
-

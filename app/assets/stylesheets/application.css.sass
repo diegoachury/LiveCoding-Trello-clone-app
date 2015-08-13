@@ -15,6 +15,8 @@
 $body-bg: lighten(#D4C6C2, 14%)
 $gray-base: #0B1C26
 $brand-primary: #1F5E75
+// $btn-info-color: #0B1C26
+$btn-info-bg: lighten($gray-base, 20%)
 
 @import "bootstrap-sprockets"
 @import "bootstrap"
@@ -30,3 +32,9 @@ $brand-primary: #1F5E75
 html.turbolinks-progress-bar::before
   background-color: lighten($gray-base, 30%) !important
   height: 3px !important
+
+.user-button
+  padding: 10px
+  position: relative
+  top: 10px
+  right: 10px

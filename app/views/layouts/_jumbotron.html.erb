@@ -1,3 +1,8 @@
+<% if logged_in? %>
+  <%= link_to "Hello and welcome #{current_user.name.capitalize}!", 
+               edit_user_path(current_user), 
+               class: 'user-button pull-right btn btn-xs btn-info' %>
+<% end %>
 <div class="jumbotron">
   <div class="container text-center">
     <h1>Trello clone app</h1>
