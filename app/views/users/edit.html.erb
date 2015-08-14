@@ -1,0 +1,16 @@
+<div class='my-form-group'>
+
+  <%= render 'shared/errors', obj: @user %>
+
+  <h1 class='knewave text-center'>Edit user</h1>
+
+  <%= render 'users/form' %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <%= link_to 'Delete your account', user_path(@user), method: :delete, data: { confirm: 'Do you really want to DELETE your account?' }, class: 'btn btn-lg btn-default big-opacity' %>
+</div>
+

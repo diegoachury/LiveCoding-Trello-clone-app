@@ -1,11 +1,12 @@
 class BoardsController < ApplicationController
   before_action :get_user_and_board, only: [:show, :edit, :update, :destroy]
   def index
-    @boards = Board.all.limit 5
+    @user = User.find(params[:user_id])
+    @boards = @user.boards 
   end
 
   def show
-
+    @lists = @board.lists
   end
 
   def new
@@ -50,8 +51,6 @@ class BoardsController < ApplicationController
   def board_params
     params.require(:board).permit(:name, :description)
   end
-
-  private
 
   def get_user_and_board
     @user  = User.find(params[:user_id])
