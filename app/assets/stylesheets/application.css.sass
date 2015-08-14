@@ -58,18 +58,29 @@ html.turbolinks-progress-bar::before
   min-height: 150px
   margin: 15px auto
   padding: 0 30px
-  border-radius: 30%
+  border-radius: 60px
   border: 5px solid lighten($gray-base, 65%)
-  color: lighten($gray-base, 70%)
   background-color: lighten($gray-base, 10%)
   transition: all 200ms
+  color: lighten($gray-base, 20%)
   &:hover
-    background-color: lighten($gray-base, 65%)
-    color: lighten($gray-base, 20%)
+    background-color: lighten($gray-base, 75%)
     border: 5px solid lighten($gray-base, 20%)
   a
     text-decoration: none
 
+.board-name-description
+  color: lighten($gray-base, 50%)
+  transition: color 700ms
+  &:hover
+    color: lighten($gray-base, 10%)
+
 .board-buttons
   padding: 15px 0
   opacity: 0.3
+
+.board-highlight
+  color: lighten($gray-base, 65%)
+  background-color: lighten($gray-base, 10%)
+  padding: 10px 15px 15px 15px
+  border-radius: 10px

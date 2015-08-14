@@ -16,8 +16,10 @@
 
   <%= link_to user_board_path(user, board) do %>
     <div class='board text-center'>
-      <h3 class='knewave'><%= board.name %></h3>
-      <p><%= board.description %></p>
+      <div class='board-name-description'>
+        <h3 class='knewave'><%= board.name %></h3>
+        <p><%= board.description %></p>
+      </div>
       <div class='board-buttons'>
         <%= link_to 'edit', edit_user_board_path(user, board), 
                             class: 'btn btn-primary' %>
