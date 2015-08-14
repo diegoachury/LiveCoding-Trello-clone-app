@@ -1,1 +1,31 @@
-This is index Boards page
+<h1 class='knewave text-center'>All Boards</h1>
+
+<% if @boards.empty? %>
+  <div class='text-center'>
+    <br>
+    <h4>There are no Boards on you're profile. You can 
+      create one by clicking the button below.</h4>
+    <br>
+    <%= link_to 'Create you\'re first Board', new_user_board_path(current_user), 
+                                              class: 'btn btn-lg btn-primary' %>
+  </div>
+<% end %>
+
+<% @boards.each do |board| %>
+  <% user = board.user %>
+
+  <%= link_to user_board_path(user, board) do %>
+    <div class='board text-center'>
+      <h3 class='knewave'><%= board.name %></h3>
+      <p><%= board.description %></p>
+      <div class='board-buttons'>
+        <%= link_to 'edit', edit_user_board_path(user, board), 
+                            class: 'btn btn-primary' %>
+        <%= link_to 'delete', user_board_path(user, board), 
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' },
+                              class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -49,3 +49,27 @@ html.turbolinks-progress-bar::before
     margin: 0
   h3
     margin: 0
+
+.container
+  width: 770px
+
+.board
+  width: 400px
+  min-height: 150px
+  margin: 15px auto
+  padding: 0 30px
+  border-radius: 30%
+  border: 5px solid lighten($gray-base, 65%)
+  color: lighten($gray-base, 70%)
+  background-color: lighten($gray-base, 10%)
+  transition: all 200ms
+  &:hover
+    background-color: lighten($gray-base, 65%)
+    color: lighten($gray-base, 20%)
+    border: 5px solid lighten($gray-base, 20%)
+  a
+    text-decoration: none
+
+.board-buttons
+  padding: 15px 0
+  opacity: 0.3

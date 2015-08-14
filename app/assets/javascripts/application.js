@@ -17,3 +17,7 @@
 //= require_tree .
 
 Turbolinks.enableProgressBar();
+
+// $('.board').hover(function(){
+//   $('.board-buttons').show();
+// })
