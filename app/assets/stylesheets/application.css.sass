@@ -81,7 +81,7 @@ html.turbolinks-progress-bar::before
       color: lighten($gray-base, 20%)
     .board-name-description:hover
       color: lighten($gray-base, 10%)
-      text-shadow: 0px 0px 20px lighten($gray-base, 15%)
+      text-shadow: 0px 0px 1px #fff
   a
     text-decoration: none
 
@@ -93,10 +93,16 @@ html.turbolinks-progress-bar::before
   opacity: 0.3
 
 .board-highlight
+  position: relative
   color: lighten($gray-base, 65%)
   background-color: lighten($gray-base, 10%)
   padding: 10px 15px 15px 15px
   border-radius: 10px
+
+.new-list-button
+  position: absolute
+  right: 0
+  top: -59px
 
 .big-opacity
   opacity: 0.5
@@ -118,9 +124,12 @@ html.turbolinks-progress-bar::before
   margin: 0 auto
   display: none
 
+.hidden-list-form
+  display: none
+
 .container-for-lists
   position: absolute
-  top: 438px
+  top: 370px
   left: 0
   min-width: 3000px
   .list-box
@@ -129,3 +138,13 @@ html.turbolinks-progress-bar::before
 .card-form-button
   display: block
   margin: 10px auto
+
+.alert
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 99
+  text-align: center
+  li
+    list-style-type: none
