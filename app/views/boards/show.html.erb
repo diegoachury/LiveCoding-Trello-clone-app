@@ -6,22 +6,27 @@
     <%= link_to 'edit', edit_user_board_path(@user, @board), class: 'pull-right btn btn-primary big-opacity' %>
   </h4>
 </div>
-<div class='row'>
-  <%= link_to 'New list', new_user_board_list_path(@user, @board), class: 'btn btn-primary' %>
+<div class='row text-center'>
+  <%= link_to 'New list', new_user_board_list_path(@user, @board), class: 'btn btn-lg btn-primary big-opacity' %>
 </div>
 
-<div class='row text-center'>
   <% if @lists.empty? %>
-    <br>
-    <br>
-    <h2>You have no lists yet!</h2>
-    <br>
-  <%= link_to 'Create your first list', new_user_board_list_path(@user, @board), class: 'btn btn-lg btn-primary' %>
+      <div class='row text-center'>
+      <br>
+      <br>
+      <h2>You have no lists yet!</h2>
+      <br>
+      <%= link_to 'Create your first list', new_user_board_list_path(@user, @board), class: 'btn btn-lg btn-primary' %>
+    </div>
   <% else %>
+    <div class='container-for-lists text-center clearfix'>
     <% @lists.each do |list| %>
       <div class='list-box'>
         <h4><%= list.name %></h4>
+      !!! HERE are the cards !!!
 
+        <div class='list-form hidden-list-form'>
+          <h3 class='knewave'>Add new Card</h3>
           <%= form_tag user_board_list_cards_path(list.board.user, list.board, list) do %>
             <div class='form-group'>
               <%= label_tag      :name %>
@@ -33,11 +38,13 @@
             </div>
             <div class='form-group'>
               <%= label_tag      :position %>
-              <%= number_field_tag :position, '', class: 'form-control', placeholder: 'Leave blank if you don\'t care about positioning...' %>
+              <%= number_field_tag :position, '', class: 'form-control', placeholder: 'You can change this later...' %>
             </div>
               <%= submit_tag 'Add card', class: 'btn btn-primary' %>
           <% end %>
+        </div>
+        <button class='btn btn-primary card-form-button'>Add card</button>
       </div>
     <% end %>
+    </div>
   <% end %>
-</div>
