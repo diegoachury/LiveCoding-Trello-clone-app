@@ -13,6 +13,6 @@
                           placeholder: 'password here...'%>
   </div>
 
-  <%= f.submit 'Sign up', class: 'btn btn-lg btn-primary' %>
+  <%= f.submit((@user.new_record? ? 'Sign up' : 'Save'), class: 'btn btn-lg btn-primary') %>
 <% end %>
 

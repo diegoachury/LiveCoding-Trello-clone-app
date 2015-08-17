@@ -7,13 +7,6 @@
     <%= link_to 'New Board', new_user_board_path(current_user) %>
   </li>
 <% end %>
-
-<% unless logged_in? %>
-  <li role="presentation" class="<%= cp(login_path) %>">
-    <%= link_to 'Login', login_path %>
-  </li>
-  <li role="presentation" class="<%= cp(sign_up_path) %>">
-    <%= link_to 'Sign up', sign_up_path %>
   </li>
   <li role="presentation" class="<%= cp(help_center_path)%>">
     <%= link_to 'Help center', help_center_path %>
@@ -21,9 +14,15 @@
   <li role="presentation" class="<%= cp(about_us_path) %>">
     <%= link_to 'About us', about_us_path %>
   </li>
+<% unless logged_in? %>
+  <li role="presentation" class="<%= cp(login_path) %>">
+    <%= link_to 'Login', login_path %>
+  </li>
+  <li role="presentation" class="<%= cp(sign_up_path) %>">
+    <%= link_to 'Sign up', sign_up_path %>
 <% else %>
   <li role="presentation" >
     <%= link_to 'Logout', logout_path, method: :delete %>
   </li>
-</ul>
 <% end %>
+</ul>

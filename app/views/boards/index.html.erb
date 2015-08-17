@@ -3,10 +3,10 @@
 <% if @boards.empty? %>
   <div class='text-center'>
     <br>
-    <h4>There are no Boards on you're profile. You can 
+    <h4>There are no Boards on your profile. You can 
       create one by clicking the button below.</h4>
     <br>
-    <%= link_to 'Create you\'re first Board', new_user_board_path(current_user), 
+    <%= link_to 'Create your first Board', new_user_board_path(current_user), 
                                               class: 'btn btn-lg btn-primary' %>
   </div>
 <% end %>
