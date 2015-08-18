@@ -1,13 +1,14 @@
 class CardsController < ApplicationController
   def create
     @list = List.find(params[:list_id])
-    @card = @list.cards.build(name: params[:name], 
-                              description: params[:description]) 
+    @card = @list.cards.build(name:        params[:name], 
+                              description: params[:description],
+                              position:    params[:position]) 
 
     if @card.save
-      board = Board.find(params[:board_id])
-
-      redirect_to user_board_path(current_user, board)
+      respond_to do |format|
+        format.js
+      end
     end
   end
 end

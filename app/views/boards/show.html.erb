@@ -27,11 +27,15 @@
           <%= link_to 'delete', user_board_list_path(@user, @board, list), method: :delete, data: { confirm: "Do you really want to delete list: '#{list.name}'" }, class: 'btn btn-sm btn-primary big-opacity pull-right' %>
           <%= list.name %>
         </h4>
-      !!! HERE are the cards !!!
+        <ul id='list_<%= list.id %>'>
+          <% list.cards.each do |card| %>
+            <li id='list_<%= list.id %>_card_<%= card.id %>'><h4><%= card.name %><span><%= card.position %></span></h4><p><%= card.description %></p></li>
+          <% end %>
+        </ul>
 
         <div class='list-form hidden-list-form'>
           <h3 class='knewave'>Add new Card</h3>
-          <%= form_tag user_board_list_cards_path(list.board.user, list.board, list) do %>
+          <%= form_tag user_board_list_cards_path(list.board.user, list.board, list), remote: true do %>
             <div class='form-group'>
               <%= label_tag      :name %>
               <%= text_field_tag :name, '', class: 'form-control', placeholder: 'Name of the card goes here...' %>

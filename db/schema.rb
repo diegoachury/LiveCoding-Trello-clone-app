@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812031852) do
+ActiveRecord::Schema.define(version: 20150818140903) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "name",        limit: 15
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150812031852) do
   create_table "cards", force: :cascade do |t|
     t.string   "name",        limit: 25
     t.text     "description",            default: ""
-    t.integer  "postition"
+    t.integer  "position"
     t.integer  "list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
