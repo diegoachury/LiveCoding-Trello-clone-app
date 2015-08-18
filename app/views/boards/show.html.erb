@@ -20,7 +20,11 @@
     <div class='container-for-lists text-center clearfix'>
     <% @lists.each do |list| %>
       <div class='list-box'>
-        <h4><%= list.name %></h4>
+        <h4>
+          <%= link_to 'edit', edit_user_board_list_path(@user, @board, list), class: 'btn btn-sm btn-primary big-opacity pull-left' %>
+          <%= link_to 'delete', user_board_list_path(@user, @board, list), method: :delete, data: { confirm: "Do you really want to delete list: '#{list.name}'" }, class: 'btn btn-sm btn-primary big-opacity pull-right' %>
+          <%= list.name %>
+        </h4>
       !!! HERE are the cards !!!
 
         <div class='list-form hidden-list-form'>
