@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  before_action do
+    Rack::MiniProfiler.authorize_request
+  end
 end
