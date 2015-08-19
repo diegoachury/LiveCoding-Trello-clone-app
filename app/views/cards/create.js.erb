@@ -1,8 +1,11 @@
 
 <% if @card.valid? %>
   var ul = $('#list_<%= @list.id %>');
-  var obj = $("<li id='list_<%= @list.id %>_card_<%= @card.id %>'><h4><%=@card.name %><span><%= @card.position %></span></h4><p><%= @card.description %></p></li>");
+  var obj = $("<li id='list_<%= @list.id %>_card_<%= @card.id %>'><h4><%=@card.name %><span><%= @card.position %></span></h4><div class='pul-left big-opacity clearfix'> <%= j(link_to 'edit', edit_user_board_list_card_path(@user, @board, @list, @card), class: 'btn btn-sm btn-primary pull-left') %> <%= j(link_to 'delete', user_board_list_card_path(@user, @board, @list, @card), remote: true, method: :delete, class: 'btn btn-sm btn-primary pull-right') %> </div><p><%= @card.description %></p></li>");
   ul.append(obj);
 <% else %>
   alert('There were some errors: <%= @card.errors.full_messages.join(', ') %>');
 <% end %>
+
+
+

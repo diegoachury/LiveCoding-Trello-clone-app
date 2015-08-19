@@ -29,7 +29,15 @@
         </h4>
         <ul id='list_<%= list.id %>'>
           <% list.cards.each do |card| %>
-            <li id='list_<%= list.id %>_card_<%= card.id %>'><h4><%= card.name %><span><%= card.position %></span></h4><p><%= card.description %></p></li>
+            <li id='list_<%= list.id %>_card_<%= card.id %>'>
+              <h4><%= card.name %><span><%= card.position %></span>
+              </h4>
+                <div class='pul-left big-opacity clearfix'>
+                  <%= link_to 'edit', edit_user_board_list_card_path(@user, @board, list, card), class: 'btn btn-sm btn-primary pull-left' %>
+                  <%= link_to 'delete', user_board_list_card_path(@user, @board, list, card), remote: true, method: :delete, class: 'btn btn-sm btn-primary pull-right' %>
+                </div>
+              <p><%= card.description %></p>
+            </li>
           <% end %>
         </ul>
 
