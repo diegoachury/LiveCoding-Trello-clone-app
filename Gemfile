@@ -14,7 +14,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'sqlite3', group: :development
 gem 'puma'
-gem 'rack-mini-profiler'
 
 group :development, :test do
   gem 'pry'
