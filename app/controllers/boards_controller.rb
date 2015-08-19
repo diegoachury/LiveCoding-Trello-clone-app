@@ -6,7 +6,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @lists = @board.lists
+    @lists = @board.lists.order(position: :asc)
   end
 
   def new

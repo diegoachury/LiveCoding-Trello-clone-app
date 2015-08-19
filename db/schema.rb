@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818140903) do
+ActiveRecord::Schema.define(version: 20150819154541) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "name",        limit: 15
     t.text     "description"
-    t.boolean  "status"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150818140903) do
   create_table "cards", force: :cascade do |t|
     t.string   "name",        limit: 25
     t.text     "description",            default: ""
-    t.integer  "position"
+    t.integer  "position",               default: 9999
     t.integer  "list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -37,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150818140903) do
 
   create_table "lists", force: :cascade do |t|
     t.string   "name",       limit: 15
-    t.integer  "position"
+    t.integer  "position",              default: 9999
     t.integer  "board_id"
     t.datetime "created_at"
     t.datetime "updated_at"

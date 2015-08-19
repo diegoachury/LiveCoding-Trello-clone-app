@@ -28,21 +28,22 @@
           <%= list.name %>
         </h4>
         <ul id='list_<%= list.id %>'>
-          <% list.cards.each do |card| %>
+          <% cards = list.cards.order(position: :asc) %>
+          <% cards.each do |card| %>
             <li id='list_<%= list.id %>_card_<%= card.id %>'>
-              <h4><%= card.name %><span><%= card.position %></span>
+              <h4 class='card-headline'><%= card.name %><span><%= card.position if card.position == 9999 %></span>
               </h4>
-                <div class='pul-left big-opacity clearfix'>
-                  <%= link_to 'edit', edit_user_board_list_card_path(@user, @board, list, card), class: 'btn btn-sm btn-primary pull-left' %>
-                  <%= link_to 'delete', user_board_list_card_path(@user, @board, list, card), remote: true, method: :delete, class: 'btn btn-sm btn-primary pull-right' %>
-                </div>
+              <div class='pul-left big-opacity clearfix card-buttons'>
+                <%= link_to 'edit', edit_user_board_list_card_path(@user, @board, list, card), class: 'btn btn-sm btn-primary pull-left' %>
+                <%= link_to 'delete', user_board_list_card_path(@user, @board, list, card), remote: true, method: :delete, class: 'btn btn-sm btn-primary pull-right' %>
+              </div>
               <p><%= card.description %></p>
             </li>
           <% end %>
         </ul>
 
         <div class='list-form hidden-list-form'>
-          <h3 class='knewave'>Add new Card</h3>
+          <div class='knewave list-form-headline'>Add new Card</div>
           <%= form_tag user_board_list_cards_path(list.board.user, list.board, list), remote: true do %>
             <div class='form-group'>
               <%= label_tag      :name %>
@@ -54,9 +55,10 @@
             </div>
             <div class='form-group'>
               <%= label_tag      :position %>
-              <%= number_field_tag :position, '', class: 'form-control', placeholder: 'You can change this later...' %>
+              <%= number_field_tag :position, '', class: 'form-control', placeholder: 'You can change this later...', value: 9999 %>
             </div>
               <%= submit_tag 'Add Card', class: 'btn btn-primary' %>
+              <%= button_tag 'clear data', type: 'reset', class: 'btn btn-primary big-opacity' %>
           <% end %>
         </div>
         <button class='btn btn-primary card-form-button'>Add Card</button>

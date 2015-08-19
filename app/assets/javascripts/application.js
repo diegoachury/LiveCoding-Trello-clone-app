@@ -42,5 +42,13 @@ function listButton(){
   })
 }
 
+function cardButtons(){
+  $('.list-box').on('click', '.card-headline', function(){
+    $(this).closest('li').find('.card-buttons').slideToggle();
+  })
+}
+
 $(document).ready(listButton)
+$(document).ready(cardButtons)
 $(document).on('page:load', listButton)
+$(document).on('page:load', cardButtons)
