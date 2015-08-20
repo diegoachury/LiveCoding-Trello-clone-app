@@ -22,7 +22,6 @@ class CardsController < ApplicationController
     @card.update(params.require(:card).permit(:name, :description, :position))
 
     if @card.save
-      flash[:success] = "Card: '#{@card.name}' was updated."
       redirect_to user_board_path(@user, @board)
     else
       render 'edit'

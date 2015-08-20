@@ -23,7 +23,7 @@
     <% @lists.each do |list| %>
       <div class='list-box'>
         <h4>
-          <%= link_to 'edit', edit_user_board_list_path(@user, @board, list), class: 'btn btn-sm btn-primary big-opacity pull-left' %>
+          <%= link_to 'edit', edit_user_board_list_path(@user, @board, list), class: 'btn btn-sm btn-primary big-opacity pull-left edit-list-button' %>
           <%= link_to 'delete', user_board_list_path(@user, @board, list), method: :delete, data: { confirm: "Do you really want to delete list: '#{list.name}'" }, class: 'btn btn-sm btn-primary big-opacity pull-right' %>
           <%= list.name %>
         </h4>
@@ -31,7 +31,7 @@
           <% cards = list.cards.order(position: :asc) %>
           <% cards.each do |card| %>
             <li id='list_<%= list.id %>_card_<%= card.id %>'>
-              <h4 class='card-headline'><%= card.name %><span><%= card.position if card.position == 9999 %></span>
+              <h4 class='card-headline'><%= card.name %><span><%= card.position unless card.position == 9999 %></span>
               </h4>
               <div class='pul-left big-opacity clearfix card-buttons'>
                 <%= link_to 'edit', edit_user_board_list_card_path(@user, @board, list, card), class: 'btn btn-sm btn-primary pull-left' %>
