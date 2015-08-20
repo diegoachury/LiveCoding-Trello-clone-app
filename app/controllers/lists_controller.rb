@@ -10,7 +10,6 @@ class ListsController < ApplicationController
     @list = @board.lists.build(list_params)
 
     if @list.save
-      flash[:success] = "List: #{@list.name} saved!"
       redirect_to user_board_path(@user, @board)
     else
       render 'new'
@@ -24,7 +23,6 @@ class ListsController < ApplicationController
     @list.update(list_params)
 
     if @list.save
-      flash[:success] = "List was successfully updated"
       redirect_to user_board_path(@user, @board)
     else
       render 'edit'
@@ -33,7 +31,6 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    flash[:success] = "You have successfully deleted list: '#{@list.name}'"
     redirect_to :back
   end
 
