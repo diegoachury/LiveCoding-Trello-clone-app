@@ -31,7 +31,7 @@
           <% cards = list.cards.order(position: :asc) %>
           <% cards.each do |card| %>
             <li id='list_<%= list.id %>_card_<%= card.id %>'>
-              <h4 class='card-headline'><%= card.name %><span><%= card.position unless card.position == 9999 %></span>
+              <h4 class='card-headline big-opacity'><%= card.name %><span><%= card.position unless card.position == 9999 %></span>
               </h4>
               <div class='pul-left big-opacity clearfix card-buttons'>
                 <%= link_to 'edit', edit_user_board_list_card_path(@user, @board, list, card), class: 'btn btn-sm btn-primary pull-left' %>
