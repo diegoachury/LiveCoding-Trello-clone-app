@@ -3,5 +3,5 @@ class List < ActiveRecord::Base
   has_many   :cards, dependent: :destroy
 
   validates  :name, presence: true,
-                    length: { maximum: 40 }
+                    length: { maximum: 15 }
 end
