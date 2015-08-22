@@ -1,17 +1,17 @@
 ## Welcome to Trello clone app
 
-This app is build using Ruby on Rails framework. It is not ment to replace the 
-real Trello app. It was build for education purpuse. 
+This app is build using Ruby on Rails framework. It is not meant to replace the 
+real Trello app. It was build for education purpose. 
 
 ## Getting Started
 
-:first: Look at the gem file for the Ruby version and the gem used in the app
+:one: Look at the gem file for the Ruby version and the gem used in the app
 
-:second: Just bundle install and you should be good to go :collision:
+:two: Just bundle install and you should be good to go :collision:
 
 ## Contributing
 
-It would be awesome if could contribute to make this app better.
+It would be awesome if you could contribute to make this app better.
 
 ## License
 
