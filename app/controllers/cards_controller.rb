@@ -1,5 +1,8 @@
 class CardsController < ApplicationController
   before_action :get_user_board_list, only: [:create, :edit, :update, :destroy]
+  before_action :require_user
+
+  before_action :require_same_user
   def create
     @card = @list.cards.build(name:        params[:name], 
                               description: params[:description],

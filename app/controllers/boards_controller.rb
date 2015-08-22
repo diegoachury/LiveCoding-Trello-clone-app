@@ -1,5 +1,8 @@
 class BoardsController < ApplicationController
   before_action :get_user_and_board, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_same_user
+
   def index
     @user = User.find(params[:user_id])
     @boards = @user.boards 

@@ -1,6 +1,8 @@
 class ListsController < ApplicationController
   before_action :find_board_and_user, only: [:new, :create] 
   before_action :find_board_user_list, only: [:edit, :update, :destroy]
+  before_action :require_user
+  before_action :require_same_user
 
   def new
     @list = List.new

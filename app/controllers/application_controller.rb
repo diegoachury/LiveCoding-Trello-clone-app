@@ -12,4 +12,18 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  def require_user
+    access_denied unless logged_in?
+  end
+
+  def require_same_user
+    user_id = params[:user_id] || params[:id]
+    access_denied unless logged_in? && session[:user_id] == user_id.to_i
+  end
+
+  def access_denied
+    flash[:danger] = "You have been a naughty boy/girl and I have to report you now!"
+    redirect_to root_path
+  end
 end
