@@ -5,7 +5,7 @@ real Trello app. It was build for education purpose.
 
 ## Getting Started
 
-:one: Look at the gem file for the Ruby version and the gem used in the app
+:one: Look at the gems file for the Ruby version and the gem used in the app
 
 :two: Just bundle install and you should be good to go :collision:
 

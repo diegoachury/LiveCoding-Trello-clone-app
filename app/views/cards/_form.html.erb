@@ -18,5 +18,10 @@
                                   placeholder: 'Leave blank if you don\'t care about positioning...' %>
   </div>
 
+  <div class='form-group'>
+    <%= f.label :list_id %>
+    <%= f.collection_select :list_id, List.where(board_id: @board.id), :id, :name, {}, { class: 'form-control' } %>
+  </div>
+
   <%= f.submit 'Save List', class: 'btn btn-lg btn-primary' %>
 <% end %>

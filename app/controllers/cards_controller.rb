@@ -22,7 +22,7 @@ class CardsController < ApplicationController
 
   def update
     @card = Card.find(params[:id])
-    @card.update(params.require(:card).permit(:name, :description, :position))
+    @card.update(params.require(:card).permit(:name, :description, :position, :list_id))
 
     if @card.save
       redirect_to user_board_path(@user, @board)
